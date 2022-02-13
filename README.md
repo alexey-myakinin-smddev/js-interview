@@ -1,7 +1,7 @@
 # JS Interview
 
 ```javascript
-// 1. Async
+// 1. Async - назвать порядок вывода console.log()
 const foo = () => {
   new Promise(() => console.log("1")).then(() => console.log("2"));
   Promise.resolve().then(() => console.log("3"));
@@ -10,15 +10,13 @@ const foo = () => {
 };
 foo();
 
+// 2. Async - назвать разницу между Promise.all, Promise.allSettled и Promise.race
 const promises = [Promise.resolve(), Promise.reject()];
-
 Promise.all(promises);
 Promise.allSettled(promises);
 Promise.race(promises);
 
-/**
- * 2. Events
- */
+// 3. Events - зачем нужны, что выведет код ниже
 const EventsEmitter = require("events");
 const emitter = new EventsEmitter();
 emitter.on("event", () => console.log("Event"));
@@ -29,9 +27,7 @@ emitter.once("once", () => console.log("Once"));
 emitter.emit("once");
 emitter.emit("once");
 
-/**
- * 3. Misc
- */
+// 4. Разница readFile1 и readFile2
 const {
   promises: { readFile: readFile1 },
   readFile: readFile2,
