@@ -1,6 +1,6 @@
 # JS Interview
 
-```
+```javascript
 // 1. Async
 const foo = () => {
   new Promise(() => console.log("1")).then(() => console.log("then"));
