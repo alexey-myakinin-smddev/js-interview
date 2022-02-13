@@ -23,6 +23,7 @@ const EventsEmitter = require("events");
 const emitter = new EventsEmitter();
 emitter.on("event", () => console.log("Event"));
 emitter.emit("event", 1, 2, 3, 4, 5);
+emitter.emit("event", 1, 2, 3, 4, 5);
 
 emitter.once("once", () => console.log("Once"));
 emitter.emit("once");
